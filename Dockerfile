@@ -1,13 +1,9 @@
 ARG ALPINE_VERSION
+
 FROM alpine:${ALPINE_VERSION}
 
-ARG ALPINE_VERSION
-ARG JDK_VERSION
+LABEL repo="https://github.com/s3vt/maven-docker.git"
 
-# Labels
-LABEL repo="https://github.com/s3vt/java-docker.git"
+RUN apk add --no-cache --update maven
 
-# Add openjdk-jre headless
-RUN apk add --no-cache --update openjdk${JDK_VERSION}
-
-CMD [ "javac",  "-version" ]
+CMD [ "mvn",  "-version" ]
