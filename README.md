@@ -8,6 +8,8 @@ Copy/mount the source directories to the container and build
 
 
 ```
+MVN_REPO=/home/user/.m2
+CODE_BASE=/home/user/javaproject
 docker run --rm \
   --volume ${MVN_REPO}:/root/.m2 \
   --volume ${CODE_BASE}:/app \
