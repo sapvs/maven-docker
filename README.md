@@ -15,3 +15,7 @@ docker run --rm \
   --volume ${CODE_BASE}:/app \
   --workdir /app s3vt/maven:latest mvn install
 ```
+
+## Source
+
+[github repo](https://github.com/s3vt/maven-docker)
