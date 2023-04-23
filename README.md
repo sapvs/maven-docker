@@ -13,9 +13,9 @@ CODE_BASE=/home/user/javaproject
 docker run --rm \
   --volume ${MVN_REPO}:/root/.m2 \
   --volume ${CODE_BASE}:/app \
-  --workdir /app s3vt/maven:latest mvn install
+  --workdir /app vsapan/maven:latest mvn install
 ```
 
 ## Source
 
-[github repo](https://github.com/s3vt/maven-docker)
+[github repo](https://github.com/vsapan/maven-docker)
