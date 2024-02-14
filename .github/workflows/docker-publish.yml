@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        alpine_ver: [latest]
+        alpine_ver: [3.18, 3.19, latest]
     steps:
       - name: Login to DockerHub
         uses: docker/login-action@v3
