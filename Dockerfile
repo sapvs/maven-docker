@@ -1,9 +1,10 @@
-ARG ALPINE_VERSION
+FROM vsaps/java:21
 
-FROM alpine:${ALPINE_VERSION}
+WORKDIR /app
+ADD https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip /app
 
-LABEL repo="https://github.com/s3vt/maven-docker.git"
+RUN unzip apache-maven-3.9.9-bin.zip && mv apache-maven-3.9.9 maven && rm apache-maven-3.9.9-bin.zip
 
-RUN apk add --no-cache --update maven
+ENV PATH=/app/maven/bin:$PATH
 
-CMD [ "mvn",  "-version" ]
+CMD ["mvn", "-version"]
